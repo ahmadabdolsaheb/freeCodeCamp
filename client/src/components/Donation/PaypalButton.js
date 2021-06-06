@@ -41,8 +41,8 @@ export class PaypalButton extends Component {
     const { amount, duration } = this.state;
     const { skipAddDonation = false } = this.props;
 
-    // Skip the api if user is not signed in or if its a one-time donation
-    if (!skipAddDonation || isSubscription) {
+    // Skip the api if user is not signed in and if it is a one-time donation
+    if (!skipAddDonation && isSubscription) {
       this.props.addDonation(data);
     }
 
